@@ -2,10 +2,14 @@ import { Group, Home, MarkEmailReadTwoTone, ModeNight, NightShelter, Pages, Pers
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from '@mui/material'
 import React from 'react'
 
-export const Sidebar = ({mode,setmode}) => {
+export const Sidebar = ({mode,setmode,side}) => {
+
+  
   return (
-    <Box  flex={1} p={2} sx={{display:{xs:'none',sm:'block'}}}>
-      <Box position={'fixed'}>
+    <Box flex={1} p={2} sx={{display:{xs:`${side}`,sm:'block'}}}
+    
+    >
+      <Box bgcolor={'background.default'} position={'fixed'} sx={{zIndex:'5'}}>
       <List>
       <ListItem disablePadding>
       <ListItemButton component={'a'} href='#'>

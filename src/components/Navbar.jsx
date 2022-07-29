@@ -32,7 +32,7 @@ const UserBox = styled("Box")(({theme}) =>({
   }
 
 }))
-export const Navbar = () => {
+export const Navbar = ({side,setside}) => {
   const [open, setopen] = useState(false)
   
   return (
@@ -41,7 +41,7 @@ export const Navbar = () => {
             <Typography variant='h6' sx={{display:{xs:"none", sm:'block'}}}>
             Navbar
             </Typography>
-            <PetsOutlined sx={{display:{xs:"block", sm:'none'}}} />
+            <PetsOutlined onClick={e => setside(side =="none" ? "block" : "none")} sx={{display:{xs:"block", sm:'none'}}} />
             <Search><InputBase placeholder='Search' /></Search>
             <IconsBox onClick={e => setopen(true)}>
               <Badge badgeContent={4} color="error">
